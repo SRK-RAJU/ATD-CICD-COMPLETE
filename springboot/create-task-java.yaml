@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: sathish441/createat-devops-task
+  repository: srkmsk/atd-cicd
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "spring-v1"
