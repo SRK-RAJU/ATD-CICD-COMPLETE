@@ -29,7 +29,14 @@ pipeline {
         }
         stage('nexus-integration') {
             steps {
-                nexusArtifactUploader artifacts: [[artifactId: 'springboot-backend', classifier: '', file: 'springboot/java-springboot/target/springboot-backend-0.0.1-SNAPSHOT.jar', type: 'jar']], credentialsId: 'nexus-jenkins', groupId: 'net.javaguides', nexusUrl: '35.238.20.94:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'raju', version: '0.0.1-SNAPSHOT'    }
+                nexusArtifactUploader artifacts: [[artifactId: 'springboot-backend', classifier: '',
+                                                   file: 'springboot/java-springboot/target/springboot-backend-0.0.1-SNAPSHOT.jar', type: 'jar']],
+                        credentialsId: 'nexus-integration', groupId: 'net.javaguides', nexusUrl: '35.238.20.94:8081', nexusVersion: 'nexus3',
+                        protocol: 'http', repository: 'raju', version: '0.0.1-SNAPSHOT'
+                nexusArtifactUploader artifacts: [[artifactId: 'springboot-backend', classifier: '',
+                                                   file: 'springboot/java-springboot/target/springboot-backend-0.0.1-SNAPSHOT.jar', type: 'jar']],
+                        credentialsId: 'nexus-jenkins', groupId: 'net.javaguides', nexusUrl: '35.238.20.94:8081', nexusVersion: 'nexus3',
+                        protocol: 'http', repository: 'raju', version: '0.0.1-SNAPSHOT'    }
         }
         stage('sonar') {
             steps {
