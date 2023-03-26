@@ -1,11 +1,12 @@
 # Build stage
 FROM maven:3.6.3-jdk-11-slim AS build
-COPY src /home/app/src
+WORKDIR /home/app
 COPY pom.xml /home/app
-RUN mvn -f /home/app/pom.xml clean test package
+COPY src /home/app/src
+RUN mvn -f pom.xml clean test package
 
 # Package stage
 FROM openjdk:8-jdk-alpine
 COPY --from=build /home/app/target/*.jar /app.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/app.jar"]
+CMD ["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "/app.jar"]
