@@ -1,5 +1,5 @@
 # Build stage
-FROM maven:3.9.1-jdk-8-slim AS build
+FROM maven:3.6.1-jdk-8-slim AS build
 WORKDIR /home/app
 COPY pom.xml /home/app
 COPY src /home/app/src
