@@ -7,6 +7,6 @@ RUN mvn -f pom.xml clean test package
 
 # Package stage
 FROM openjdk:8-jdk-alpine
-COPY --from=build target/*.jar /app.jar
+COPY  target/*.jar /app.jar
 EXPOSE 8080
 CMD ["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "/app.jar"]
