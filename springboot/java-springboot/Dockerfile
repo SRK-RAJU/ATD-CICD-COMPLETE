@@ -3,7 +3,7 @@ FROM maven:3.6.3-jdk-11-slim AS build
 WORKDIR /home/app
 COPY pom.xml /home/app
 COPY src /home/app/src
-RUN mvn -f /home/app/pom.xml clean test package
+RUN mvn -f pom.xml clean test package
 
 # Package stage
 FROM openjdk:latest
