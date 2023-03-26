@@ -1,0 +1,2 @@
+RUN --mount=type=cache,target=/root/.m2/repository mvn -e -B clean package - 
+Dmaven.test.skip=true
