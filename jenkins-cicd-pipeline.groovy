@@ -6,7 +6,6 @@ pipeline {
     tools {
         maven 'maven3'
     }
-
     stages {
         stage("Clone code from VCS") {
             steps {
@@ -64,6 +63,7 @@ pipeline {
         stage('Docker-push') {
             steps {
                 sh '''
+                docker images
                 docker push srkmsk/atd-cicd:spring-v1 
              '''
             }
