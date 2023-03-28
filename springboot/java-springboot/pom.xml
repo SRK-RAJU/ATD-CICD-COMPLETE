@@ -66,11 +66,7 @@
 
 	<build>
 		<plugins>
-			<plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.8.1</version>
-				<configuration><verbose>true</verbose><fork>true</fork>
-					<!-- source: compiles on a JDK with the specified version --><source>11</source><compilerVersion>1.8</compilerVersion>
-					<!-- target: runs on a JRE with the specified version --><target>11</target>
-					<executable>${JAVA_HOME_11}/bin/javac</executable></configuration></plugin>
+			
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
