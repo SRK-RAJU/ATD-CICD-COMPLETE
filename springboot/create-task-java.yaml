@@ -79,11 +79,11 @@ autoscaling:
     - type: Resource
       resource:
         name: cpu
-        targetAverageUtilization: 60
+        targetAverageUtilization: 200
     - type: Resource
       resource:
         name: memory
-        targetAverageUtilization: 60
+        targetAverageUtilization: 200
   # targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
