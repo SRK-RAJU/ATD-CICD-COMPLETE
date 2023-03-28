@@ -71,16 +71,7 @@ autoscaling:
   enabled: false
   minReplicas: 0
   maxReplicas: 1
-  metrics:
-    - type: Resource
-      resource:
-        name: cpu
-        targetAverageUtilization: 200
-    - type: Resource
-      resource:
-        name: memory
-        targetAverageUtilization: 200
-  # targetCPUUtilizationPercentage: 80
+  targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
 nodeSelector: {}
