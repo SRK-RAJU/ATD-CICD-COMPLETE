@@ -4,7 +4,9 @@
 
 replicaCount: 1
 daemonSet: false
+initContainers: []
 
+sidecarContainers: []
 image:
   repository: srkmsk/atd-cicd
   pullPolicy: Always
@@ -71,7 +73,16 @@ autoscaling:
   enabled: false
   minReplicas: 0
   maxReplicas: 1
-  targetCPUUtilizationPercentage: 300
+  targetCPUUtilizationPercentage: 250
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: 80
+    - type: Resource
+      resource:
+        name: memory
+        targetAverageUtilization: 80
   # targetMemoryUtilizationPercentage: 80
 
 nodeSelector: {}
@@ -79,3 +90,5 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+env:
+  {}
