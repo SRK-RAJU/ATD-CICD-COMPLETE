@@ -21,16 +21,8 @@
   },
   "eslintConfig": {
     "extends": "react-app",
-    "plugin:react/recommended",
-    "rules": {
-        "no-unused-vars": [
-            "error",
-            {
-                "varsIgnorePattern": "React"
-            }
-        ]
-    ]
-  },
+    "plugin:react/recommended"
+      },
   "browserslist": {
     "production": [
       ">0.2%",
